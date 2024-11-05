@@ -29,6 +29,7 @@
     margin:0.25rem 0 0 0;
     color:rgba(190,102,12,0.9);
     font-style: italic;
+    text-wrap: balance;
     
 }
 @keyframes animate-in{
