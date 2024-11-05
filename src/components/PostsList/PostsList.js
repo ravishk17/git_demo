@@ -31,6 +31,12 @@ function PostsList(props){
         // setPosts([postData, ...posts]);
         setPosts((existingPosts) => [postData, ...existingPosts]);
     }
+    const deletePost = ((id)=>{
+        const updatedItems = posts.filter((item) => item.body !== id);
+        setPosts(updatedItems);
+        // console.log("calling delete in postslists");
+
+    })
     return (
         <>
         {/* {modalIsVisible?<Modal onClose={hideModalHandler}>
@@ -44,9 +50,9 @@ function PostsList(props){
         {posts.length>0 && (
             <ul className={classes.posts}>
             {/* <Post author={enteredAuthor} body={enteredBody}/> */}
-            {/* <Post author="Rasvish" body="Catching up with the React"/> */}
+            {/* <Post author="Ravish" body="Catching up with the React"/> */}
             {
-                posts.map((post)=><Post key={post.body} author={post.author} body={post.body}/>)
+                posts.map((post)=><Post key={post.body} author={post.author} body={post.body} id={post.body} delete={deletePost}/>)
             }
         </ul>
         )}
