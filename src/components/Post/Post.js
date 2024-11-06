@@ -3,7 +3,7 @@ import classes from './Post.module.css';
 function Post(props){
     // const chosenName = Math.random()>0.5?names[0]:names[1];
     return (
-        <li className={classes.post}>
+        <li className={classes.post} onClick={()=>props.delete(props.id)}>
             <div className={classes.frame}>
                 <p className={classes.text}>{props.body}</p>
                 <p className={classes.author}>~By {props.author}</p>
